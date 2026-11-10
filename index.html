@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade 12 Business · Delegation, Accountability, Control & Trust</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #eef5f9;
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+            color: #1a2b3c;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .page {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 2.5rem;
+            box-shadow: 0 20px 40px rgba(0, 20, 40, 0.08);
+            padding: 2.5rem 2rem;
+            border: 1px solid #d9e9f2;
+        }
+
+        /* header */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 3px solid #b3d9e8;
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .header h1 {
+            font-size: 2.1rem;
+            font-weight: 700;
+            color: #0b2c3e;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .header h1 i {
+            color: #1e7e9c;
+            font-size: 2rem;
+        }
+
+        .badge {
+            background: #d9eef6;
+            padding: 0.7rem 1.6rem;
+            border-radius: 60px;
+            font-weight: 600;
+            color: #0b3b4b;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+
+        .badge i {
+            color: #1e7e9c;
+        }
+
+        /* topic sections */
+        .topic {
+            background: #f9fcfe;
+            border-radius: 1.8rem;
+            padding: 1.8rem 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid #d0e5ef;
+            box-shadow: 0 4px 12px rgba(0, 30, 50, 0.02);
+        }
+
+        .topic h2 {
+            font-size: 1.6rem;
+            color: #0b3447;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 2px dashed #b8d9e8;
+            padding-bottom: 0.8rem;
+        }
+
+        .topic h2 i {
+            color: #1e7e9c;
+            font-size: 1.5rem;
+        }
+
+        .topic h3 {
+            font-size: 1.15rem;
+            color: #145f78;
+            margin: 1.2rem 0 0.6rem 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .topic h3 i {
+            color: #2b8aa8;
+            font-size: 1rem;
+        }
+
+        .topic ul {
+            list-style: none;
+            padding-left: 0.5rem;
+        }
+
+        .topic ul li {
+            padding: 0.45rem 0 0.45rem 1.8rem;
+            position: relative;
+            color: #1d3d4f;
+            font-size: 1rem;
+        }
+
+        .topic ul li::before {
+            content: "\f0da";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #2b8aa8;
+            font-size: 0.9rem;
+        }
+
+        .time-badge {
+            display: inline-block;
+            background: #e2f0f7;
+            border-radius: 40px;
+            padding: 0.3rem 1rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #145f78;
+            margin-left: auto;
+        }
+
+        /* exercise container */
+        .exercise-section {
+            margin-top: 3rem;
+            border-top: 3px solid #b3d9e8;
+            padding-top: 2rem;
+        }
+
+        .exercise-section > h2 {
+            font-size: 1.9rem;
+            color: #0b2c3e;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .exercise-section > h2 i {
+            color: #1e7e9c;
+        }
+
+        .exercise-card {
+            background: #ffffff;
+            border-radius: 2rem;
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid #cfe3ee;
+            box-shadow: 0 8px 20px rgba(0, 30, 50, 0.04);
+        }
+
+        .exercise-card h3 {
+            font-size: 1.5rem;
+            color: #0b3447;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .exercise-card h3 i {
+            color: #1e7e9c;
+            font-size: 1.4rem;
+        }
+
+        .question {
+            background: #f7fbfd;
+            border-radius: 1.2rem;
+            padding: 1.2rem 1.5rem;
+            margin-bottom: 1.2rem;
+            border-left: 5px solid #2b8aa8;
+        }
+
+        .question p {
+            font-weight: 600;
+            color: #0b2c3e;
+            margin-bottom: 0.9rem;
+            font-size: 1.05rem;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .options label {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 0.6rem 1rem;
+            border-radius: 0.8rem;
+            cursor: pointer;
+            transition: background 0.15s;
+            font-size: 0.98rem;
+            color: #1d3d4f;
+            border: 1px solid transparent;
+        }
+
+        .options label:hover {
+            background: #e9f4fa;
+        }
+
+        .options input[type="radio"] {
+            margin-top: 4px;
+            accent-color: #1e7e9c;
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
+        .options label.correct-highlight {
+            background: #d4f0e0;
+            border-color: #4caf82;
+        }
+
+        .options label.incorrect-highlight {
+            background: #fde8e8;
+            border-color: #e57373;
+        }
+
+        /* true/false */
+        .tf-group {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            padding: 0.3rem 0;
+        }
+
+        .tf-group label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            color: #1d3d4f;
+            padding: 0.4rem 1rem 0.4rem 0.5rem;
+            border-radius: 30px;
+            border: 1px solid transparent;
+            transition: background 0.15s;
+        }
+
+        .tf-group label:hover {
+            background: #e9f4fa;
+        }
+
+        .tf-group input[type="radio"] {
+            accent-color: #1e7e9c;
+            width: 17px;
+            height: 17px;
+        }
+
+        /* short answer */
+        .short-answer {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border-radius: 1rem;
+            border: 1.5px solid #cfe3ee;
+            font-family: inherit;
+            font-size: 0.98rem;
+            background: #ffffff;
+            transition: border 0.15s;
+            resize: vertical;
+            min-height: 70px;
+        }
+
+        .short-answer:focus {
+            outline: none;
+            border-color: #1e7e9c;
+            box-shadow: 0 0 0 3px rgba(30, 126, 156, 0.1);
+        }
+
+        .btn {
+            background: #1e7e9c;
+            color: white;
+            border: none;
+            padding: 0.9rem 2.2rem;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 0.8rem;
+            box-shadow: 0 4px 12px rgba(30, 126, 156, 0.25);
+        }
+
+        .btn:hover {
+            background: #146a84;
+            transform: scale(1.02);
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn.secondary {
+            background: #e2f0f7;
+            color: #145f78;
+            box-shadow: none;
+            border: 1px solid #b8d9e8;
+        }
+
+        .btn.secondary:hover {
+            background: #d0e5ef;
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* score box */
+        .score-box {
+            margin-top: 1.2rem;
+            padding: 1.2rem 1.8rem;
+            border-radius: 1.2rem;
+            background: #f0f9ff;
+            border: 1px solid #b8d9e8;
+            display: none;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .score-box.show {
+            display: flex;
+        }
+
+        .score-box .score-value {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #0b3447;
+        }
+
+        .score-box .score-detail {
+            color: #1d5f78;
+            font-size: 1rem;
+        }
+
+        .score-box .feedback {
+            margin-left: auto;
+            font-weight: 600;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.95rem;
+        }
+
+        .feedback.great {
+            background: #d4f0e0;
+            color: #0e6b3e;
+        }
+
+        .feedback.good {
+            background: #fef3d6;
+            color: #8a6d1c;
+        }
+
+        .feedback.needs-work {
+            background: #fde8e8;
+            color: #a13a3a;
+        }
+
+        /* lock warning */
+        .lock-warning {
+            background: #fff3cd;
+            border: 1.5px solid #ffc107;
+            color: #856404;
+            padding: 1rem 1.5rem;
+            border-radius: 1rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+        }
+
+        .lock-warning i {
+            font-size: 1.2rem;
+            color: #e6a800;
+        }
+
+        /* responsive */
+        @media (max-width: 700px) {
+            .page {
+                padding: 1.5rem 1rem;
+            }
+            .header h1 {
+                font-size: 1.5rem;
+            }
+            .topic {
+                padding: 1.2rem 1.2rem;
+            }
+            .exercise-card {
+                padding: 1.2rem 1rem;
+            }
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .tf-group {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .score-box {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .score-box .feedback {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- Header -->
+        <div class="header">
+            <h1>
+                <i class="fas fa-chart-line"></i> Grade 12 Business
+            </h1>
+            <div class="badge">
+                <i class="fas fa-clock"></i> 6 Periods · 45 min each
+            </div>
+        </div>
+
+        <!-- ==================== SYLLABUS ==================== -->
+        <div class="topic">
+            <h2>
+                <i class="fas fa-users-cog"></i> 7.1.3 Delegation and Accountability
+                <span class="time-badge"><i class="far fa-clock"></i> 3 periods</span>
+            </h2>
+
+            <h3><i class="fas fa-link"></i> The relationship between delegation and accountability</h3>
+            <ul>
+                <li>Delegation transfers authority to a subordinate, but accountability remains with the delegator.</li>
+                <li>Managers can delegate tasks, but they cannot delegate final responsibility.</li>
+                <li>Effective delegation requires clear expectations, resources, and follow-up.</li>
+            </ul>
+
+            <h3><i class="fas fa-clipboard-check"></i> The processes of accountability in a business</h3>
+            <ul>
+                <li>Setting clear performance standards and objectives.</li>
+                <li>Regular reporting, monitoring, and performance reviews.</li>
+                <li>Feedback, corrective action, and consequences for non-accountability.</li>
+                <li>Documentation and transparency in decision-making.</li>
+            </ul>
+
+            <h3><i class="fas fa-chart-simple"></i> The impact of delegation on a business</h3>
+            <ul>
+                <li><strong>Benefits:</strong> increased motivation, skill development, efficiency, succession planning, better time management for managers.</li>
+                <li><strong>Drawbacks:</strong> loss of control, inconsistent quality, poor decisions if staff lack training, potential conflict.</li>
+                <li>Balancing delegation with accountability is key to positive impact.</li>
+            </ul>
+        </div>
+
+        <div class="topic">
+            <h2>
+                <i class="fas fa-chess-king"></i> 7.1.4 Control, Authority and Trust
+                <span class="time-badge"><i class="far fa-clock"></i> 3 periods</span>
+            </h2>
+
+            <h3><i class="fas fa-sitemap"></i> The relationship between span of control and levels of hierarchy</h3>
+            <ul>
+                <li><strong>Wide span of control</strong> → fewer levels of hierarchy (flat structure).</li>
+                <li><strong>Narrow span of control</strong> → more levels of hierarchy (tall structure).</li>
+                <li>Trade-offs: closer supervision vs. faster communication and lower costs.</li>
+            </ul>
+
+            <h3><i class="fas fa-balance-scale"></i> The difference between authority and responsibility</h3>
+            <ul>
+                <li><strong>Authority</strong> = the right to give orders and make decisions (legitimate power).</li>
+                <li><strong>Responsibility</strong> = the obligation to perform assigned duties and answer for outcomes.</li>
+                <li>Authority can be delegated; responsibility remains with the person who accepted the task.</li>
+            </ul>
+
+            <h3><i class="fas fa-handshake"></i> The conflicts between control and trust that might arise when delegating</h3>
+            <ul>
+                <li>Too much control undermines trust and demotivates employees.</li>
+                <li>Too much trust without control risks errors, fraud, or goal misalignment.</li>
+                <li>Balancing: clear boundaries, milestone check-ins, and supportive feedback.</li>
+                <li>Cultural and situational factors influence the right balance.</li>
+            </ul>
+        </div>
+
+        <!-- ==================== EXERCISES ==================== -->
+        <div class="exercise-section">
+            <h2><i class="fas fa-pen-to-square"></i> Exercises</h2>
+
+            <!-- Lock warning -->
+            <div class="lock-warning" id="lockWarning">
+                <i class="fas fa-lock"></i>
+                <span><strong>Focus mode:</strong> Once you begin an exercise, leaving or refreshing this page will reset your progress. Please complete it in one sitting.</span>
+            </div>
+
+            <!-- ========== EXERCISE 1: Delegation & Accountability ========== -->
+            <div class="exercise-card" id="exercise1">
+                <h3><i class="fas fa-users-cog"></i> Exercise 1 · Delegation and Accountability</h3>
+
+                <!-- Q1 -->
+                <div class="question" data-q="1">
+                    <p>1. Which statement best describes the relationship between delegation and accountability?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q1" value="A"> A) When a manager delegates a task, they also delegate final accountability.</label>
+                        <label><input type="radio" name="q1" value="B"> B) A manager can delegate authority but remains accountable for the outcome.</label>
+                        <label><input type="radio" name="q1" value="C"> C) Accountability only applies to the subordinate, not the manager.</label>
+                        <label><input type="radio" name="q1" value="D"> D) Delegation removes the need for accountability entirely.</label>
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="question" data-q="2">
+                    <p>2. Which of the following is NOT a typical process of accountability in a business?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q2" value="A"> A) Setting clear performance standards</label>
+                        <label><input type="radio" name="q2" value="B"> B) Regular reporting and monitoring</label>
+                        <label><input type="radio" name="q2" value="C"> C) Avoiding feedback to prevent conflict</label>
+                        <label><input type="radio" name="q2" value="D"> D) Performance reviews and corrective action</label>
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="question" data-q="3">
+                    <p>3. True or False: Delegation always has a positive impact on a business.</p>
+                    <div class="tf-group">
+                        <label><input type="radio" name="q3" value="True"> True</label>
+                        <label><input type="radio" name="q3" value="False"> False</label>
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="question" data-q="4">
+                    <p>4. Which of the following is a potential drawback of delegation?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q4" value="A"> A) Increased employee motivation</label>
+                        <label><input type="radio" name="q4" value="B"> B) Better succession planning</label>
+                        <label><input type="radio" name="q4" value="C"> C) Loss of control over quality</label>
+                        <label><input type="radio" name="q4" value="D"> D) Improved time management for managers</label>
+                    </div>
+                </div>
+
+                <!-- Q5 short answer -->
+                <div class="question" data-q="5">
+                    <p>5. Briefly explain why a manager cannot delegate final accountability. (2–3 sentences)</p>
+                    <textarea class="short-answer" id="q5answer" rows="3" placeholder="Type your answer here..."></textarea>
+                </div>
+
+                <button class="btn" id="submitEx1"><i class="fas fa-check-circle"></i> Submit Exercise 1</button>
+
+                <div class="score-box" id="score1">
+                    <span class="score-value" id="score1value">0 / 5</span>
+                    <span class="score-detail" id="score1detail"></span>
+                    <span class="feedback" id="feedback1"></span>
+                </div>
+            </div>
+
+            <!-- ========== EXERCISE 2: Control, Authority & Trust ========== -->
+            <div class="exercise-card" id="exercise2">
+                <h3><i class="fas fa-chess-king"></i> Exercise 2 · Control, Authority and Trust</h3>
+
+                <!-- Q1 -->
+                <div class="question" data-q="6">
+                    <p>1. A wide span of control is typically associated with:</p>
+                    <div class="options">
+                        <label><input type="radio" name="q6" value="A"> A) Many levels of hierarchy (tall structure)</label>
+                        <label><input type="radio" name="q6" value="B"> B) Fewer levels of hierarchy (flat structure)</label>
+                        <label><input type="radio" name="q6" value="C"> C) Closer supervision of each employee</label>
+                        <label><input type="radio" name="q6" value="D"> D) Slower decision-making</label>
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="question" data-q="7">
+                    <p>2. What is the main difference between authority and responsibility?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q7" value="A"> A) Authority is the obligation to perform; responsibility is the right to decide.</label>
+                        <label><input type="radio" name="q7" value="B"> B) Authority is the right to give orders; responsibility is the obligation to answer for outcomes.</label>
+                        <label><input type="radio" name="q7" value="C"> C) They are exactly the same thing.</label>
+                        <label><input type="radio" name="q7" value="D"> D) Responsibility can be delegated, but authority cannot.</label>
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="question" data-q="8">
+                    <p>3. True or False: Too much control when delegating can undermine trust and demotivate employees.</p>
+                    <div class="tf-group">
+                        <label><input type="radio" name="q8" value="True"> True</label>
+                        <label><input type="radio" name="q8" value="False"> False</label>
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="question" data-q="9">
+                    <p>4. Which of the following best describes a conflict between control and trust when delegating?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q9" value="A"> A) Managers who trust employees never monitor progress.</label>
+                        <label><input type="radio" name="q9" value="B"> B) Too much control can signal a lack of trust, while too little can risk errors.</label>
+                        <label><input type="radio" name="q9" value="C"> C) Trust and control are always perfectly aligned.</label>
+                        <label><input type="radio" name="q9" value="D"> D) Control is only about authority, not trust.</label>
+                    </div>
+                </div>
+
+                <!-- Q5 short answer -->
+                <div class="question" data-q="10">
+                    <p>5. Explain how a narrow span of control affects the levels of hierarchy in a business. (2–3 sentences)</p>
+                    <textarea class="short-answer" id="q10answer" rows="3" placeholder="Type your answer here..."></textarea>
+                </div>
+
+                <button class="btn" id="submitEx2"><i class="fas fa-check-circle"></i> Submit Exercise 2</button>
+
+                <div class="score-box" id="score2">
+                    <span class="score-value" id="score2value">0 / 5</span>
+                    <span class="score-detail" id="score2detail"></span>
+                    <span class="feedback" id="feedback2"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div style="margin-top: 3rem; text-align: center; border-top: 2px solid #d2e6ef; padding-top: 1.8rem; color: #4c6f80; font-size: 0.95rem;">
+            <i class="fas fa-graduation-cap" style="color: #1e7e9c; margin-right: 6px;"></i>
+            Grade 12 Business · Delegation, Accountability, Control & Trust · 6 periods
+        </div>
+    </div>
+
+    <script>
+        // ============ STATE TRACKING ============
+        const state = {
+            ex1Submitted: false,
+            ex2Submitted: false,
+            ex1Answers: {},
+            ex2Answers: {}
+        };
+
+        // ============ CORRECT ANSWERS ============
+        const correctEx1 = {
+            q1: 'B',
+            q2: 'C',
+            q3: 'False',
+            q4: 'C',
+            q5: 'short'
+        };
+
+        const correctEx2 = {
+            q6: 'B',
+            q7: 'B',
+            q8: 'True',
+            q9: 'B',
+            q10: 'short'
+        };
+
+        // ============ HELPERS ============
+        function getRadioValue(name) {
+            const radios = document.getElementsByName(name);
+            for (let r of radios) {
+                if (r.checked) return r.value;
+            }
+            return null;
+        }
+
+        function disableExercise(containerId, btnId) {
+            const container = document.getElementById(containerId);
+            const inputs = container.querySelectorAll('input, textarea');
+            inputs.forEach(input => input.disabled = true);
+            const btn = document.getElementById(btnId);
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-check-circle"></i> Submitted';
+        }
+
+        function showScore(scoreBoxId, valueId, detailId, feedbackId, score, total) {
+            const box = document.getElementById(scoreBoxId);
+            const valueEl = document.getElementById(valueId);
+            const detailEl = document.getElementById(detailId);
+            const fbEl = document.getElementById(feedbackId);
+
+            valueEl.textContent = `${score} / ${total}`;
+            detailEl.textContent = `You answered ${score} out of ${total} correctly.`;
+
+            const pct = score / total;
+            if (pct >= 0.8) {
+                fbEl.textContent = 'Excellent!';
+                fbEl.className = 'feedback great';
+            } else if (pct >= 0.5) {
+                fbEl.textContent = 'Good effort';
+                fbEl.className = 'feedback good';
+            } else {
+                fbEl.textContent = 'Needs review';
+                fbEl.className = 'feedback needs-work';
+            }
+
+            box.classList.add('show');
+        }
+
+        // ============ EXERCISE 1 SUBMIT ============
+        document.getElementById('submitEx1').addEventListener('click', function() {
+            if (state.ex1Submitted) return;
+
+            let score = 0;
+            const total = 5;
+
+            // Q1
+            const q1 = getRadioValue('q1');
+            if (q1 === correctEx1.q1) score++;
+
+            // Q2
+            const q2 = getRadioValue('q2');
+            if (q2 === correctEx1.q2) score++;
+
+            // Q3
+            const q3 = getRadioValue('q3');
+            if (q3 === correctEx1.q3) score++;
+
+            // Q4
+            const q4 = getRadioValue('q4');
+            if (q4 === correctEx1.q4) score++;
+
+            // Q5 short answer – basic keyword check
+            const q5text = document.getElementById('q5answer').value.trim().toLowerCase();
+            if (q5text.length > 20 && (q5text.includes('responsib') || q5text.includes('account') || q5text.includes('delegat'))) {
+                score++;
+            }
+
+            // highlight correct/incorrect for radio questions
+            const ex1Container = document.getElementById('exercise1');
+            // Q1 options
+            ex1Container.querySelectorAll('[name="q1"]').forEach(radio => {
+                const label = radio.closest('label');
+                if (radio.value === correctEx1.q1) label.classList.add('correct-highlight');
+                else if (radio.checked) label.classList.add('incorrect-highlight');
+            });
+            // Q2
+            ex1Container.querySelectorAll('[name="q2"]').forEach(radio => {
+                const label = radio.closest('label');
+                if (radio.value === correctEx1.q2) label.classList.add('correct-highlight');
+                else if (radio.checked) label.classList.add('incorrect-highlight');
+            });
+            // Q3
+            ex1Container.querySelectorAll('[name="q3"]').forEach(radio => {
+                const label = radio.closest('label');
+                if (radio.value === correctEx1.q3) label.classList.add('correct-highlight');
+                else if (radio.checked) label.classList.add('incorrect-highlight');
+            });
+            // Q4
+            ex1Container.querySelectorAll('[name="q4"]').forEach(radio => {
+                const label = radio.closest('label');
+                if (radio.value === correctEx1.q4) label.classList.add('correct-highlight');
+                else if (radio.checked) label.classList.add('incorrect-highlight');
+            });
+
+            showScore('score1', 'score1value', 'score1detail', 'feedback1', score, total);
+            disableExercise('exercise1', 'submitEx1');
+            state.ex1Submitted = true;
+            state.ex1Answers = { q1, q2, q3, q4, q5: q5text };
+        });
+
+        // ============ EXERCISE 2 SUBMIT ============
+        document.getElementById('submitEx2').addEventListener('click', function() {
+            if (state.ex2Submitted) return;
+
+            let score = 0;
+            const total = 5;
+
+            // Q6
+            const q6 = getRadioValue('q6');
+            if (q6 === correctEx2.q6) score++;
+
+            // Q7
+            const q7 = getRadioValue('q7');
+            if (q7 === correctEx2.q7) score++;
+
+            // Q8
+            const q8 = getRadioValue('q8');
+            if (q8 === correctEx2.q8) score++;
+
+            // Q9
+            const q9 = getRadioValue('q9');
+            if (q9 === correctEx2.q9) score++;
+
+            // Q10 short answer – keyword check
+            const q10text = document.getElementById('q10answer').value.trim().toLowerCase();
+            if (q10text.length > 20 && (q10text.includes('hierarch') || q10text.includes('level') || q10text.includes('narrow') || q10text.includes('tall'))) {
+                score++;
+            }
+
+            // highlight correct/incorrect
+            const ex2Container = document.getElementById('exercise2');
+            // Q6
+            ex2Container.querySelectorAll('[name="q6"]').forEach(radio => {
+                const label = radio.closest('label');
+                if (radio.value === correctEx2.q6) label.classList.add('correct-highlight');
+                else if (radio.checked) label.classList.add('incorrect-highlight');
+            });
+            // Q7
+            ex2Container.querySelectorAll('[name="q7"]').forEach(radio => {
+                const label = radio.closest('label');
+                if (radio.value === correctEx2.q7) label.classList.add('correct-highlight');
+                else if (radio.checked) label.classList.add('incorrect-highlight');
+            });
+            // Q8
+            ex2Container.querySelectorAll('[name="q8"]').forEach(radio => {
+                const label = radio.closest('label');
+                if (radio.value === correctEx2.q8) label.classList.add('correct-highlight');
+                else if (radio.checked) label.classList.add('incorrect-highlight');
+            });
+            // Q9
+            ex2Container.querySelectorAll('[name="q9"]').forEach(radio => {
+                const label = radio.closest('label');
+                if (radio.value === correctEx2.q9) label.classList.add('correct-highlight');
+                else if (radio.checked) label.classList.add('incorrect-highlight');
+            });
+
+            showScore('score2', 'score2value', 'score2detail', 'feedback2', score, total);
+            disableExercise('exercise2', 'submitEx2');
+            state.ex2Submitted = true;
+            state.ex2Answers = { q6, q7, q8, q9, q10: q10text };
+        });
+
+        // ============ PREVENT LEAVING / REFRESHING DURING EXERCISE ============
+        // Detect if user has started answering (any interaction) but not yet submitted
+        let hasInteracted = false;
+
+        document.querySelectorAll('input, textarea').forEach(el => {
+            el.addEventListener('change', function() {
+                hasInteracted = true;
+            });
+            el.addEventListener('input', function() {
+                hasInteracted = true;
+            });
+        });
+
+        window.addEventListener('beforeunload', function(e) {
+            if (hasInteracted && (!state.ex1Submitted || !state.ex2Submitted)) {
+                // Standard message – browsers show a generic warning
+                e.preventDefault();
+                e.returnValue = 'You have unsaved exercise progress. Are you sure you want to leave? Your answers will be lost.';
+                return e.returnValue;
+            }
+        });
+
+        // Also block navigation via back/forward with a note (best-effort)
+        history.pushState(null, null, location.href);
+        window.addEventListener('popstate', function() {
+            if (hasInteracted && (!state.ex1Submitted || !state.ex2Submitted)) {
+                if (confirm('Your exercise progress will be lost if you navigate away. Stay on this page?')) {
+                    history.pushState(null, null, location.href);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
